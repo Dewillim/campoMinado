@@ -62,22 +62,12 @@ jogo.countNearMines = (campo, linI, colI) => {
     campo[linI][colI].nearMines = proxBomb;
 }
 
-for (let i = 0; i < lin; i++){
-    for (let j = 0; j < col; j++){
-        jogo.countNearMines(campoMinado, i, j);
-    }
-}
-
 jogo.countTotalBombs = (campo) => {
-    let totalBombs = 0;
-    for (i = 0; i < lin; i++){
-        for (j = 0; j < col; j++){
-            if (campo[i][j].hasMine == true){
-                totalBombs++;
-            }
+    for (let i = 0; i < lin; i++){
+        for (let j = 0; j < col; j++){
+            jogo.countNearMines(campoMinado, i, j);
         }
     }
-    return totalBombs;
 }
 
 jogo.ver = (campo) => {
