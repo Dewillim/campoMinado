@@ -42,7 +42,7 @@ jogo.random = (campo: Square[][], n: number): void => {
 
 jogo.random(campoMinado, bombN);
 
-jogo.countNearMines = (campo, linI, colI) => {
+jogo.countNearMines = (campo: Square[][], linI: number, colI: number) => {
     let proxBomb = 0;
 
     for (let i = -1; i < 2; i++){
@@ -64,7 +64,7 @@ jogo.countNearMines = (campo, linI, colI) => {
     campo[linI][colI].nearMines = proxBomb;
 }
 
-jogo.countTotalBombs = (campo) => {
+jogo.countTotalBombs = (campo: Square[][]): void => {
     for (let i = 0; i < lin; i++){
         for (let j = 0; j < col; j++){
             jogo.countNearMines(campoMinado, i, j);
@@ -72,7 +72,7 @@ jogo.countTotalBombs = (campo) => {
     }
 }
 
-jogo.ver = (campo) => {
+jogo.ver = (campo: Square[][]): void => {
     for (let i = 0; i < lin; i++) {
         let linha = '';
         for (let j = 0; j < col; j++){
