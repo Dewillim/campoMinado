@@ -8,7 +8,7 @@ interface Square {
     nearMines: number, //Número de minas em volta
 }
 
-let jogo: object = {};
+let jogo = {};
 const col: number = 5, lin: number = 5;
 const bombN: number = 10;
 
