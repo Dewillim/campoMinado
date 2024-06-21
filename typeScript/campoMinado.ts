@@ -1,16 +1,18 @@
-let jogo = {};
-const col = 5, lin = 5;
-const bombN = 10;
+type stateType = "closed" | "opened" | "flagged";
 
-Square = {
-    row: 0,
-    column: 0,
-    state: "closed", //Pode ser: closed, opened, flagged
-    hasMine: false,
-    nearMines: 0, //Número de minas em volta
+interface Square {
+    row: number,
+    column: number,
+    state: stateType, //Pode ser: closed, opened, flagged
+    hasMine: boolean,
+    nearMines: number, //Número de minas em volta
 }
 
-jogo.campo = (l, c) => {
+let jogo: object = {};
+const col: number = 5, lin: number = 5;
+const bombN: number = 10;
+
+jogo.campo = (l: number, c: number): Square[][] => {
     for (let i = 0; i < l; i++){
         jogo.campo[i] = [];
         for (j = 0; j < c; j++) {
@@ -22,9 +24,9 @@ jogo.campo = (l, c) => {
     return jogo.campo;
 }
 
-const campoMinado = jogo.campo(col, lin);
+const campoMinado: Square[][] = jogo.campo(col, lin);
 
-jogo.random = (campo, n) => {
+jogo.random = (campo: Square[][], n: number): void => {
     let bombs = 0;
 
     while (bombs < n){
