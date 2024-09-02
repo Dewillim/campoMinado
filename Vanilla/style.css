@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #f0f0f0;
+}
+
+body {
+    background-color: #0d7b93;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.block.open {
+    background-color: #093e4a;
+    color: #f0f0f0;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+button {
+    height: 60px;
+    width: 150px;
+    background-color: #1cd5ff;
+    color: #0f0f0f;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #093e4a;
+    color: #f0f0f0;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    height: 7vh;
+    width: 7vh * 7;
+}
+
+.row div {
+    background-color: #1cd5ff;
+    padding: 20px;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+    border: 1px;
+    border-color: #0f0f0f;
+    border-style: solid;
+
+    transition: background-color 0.2s;
+    &:hover {
+        background-color: #093e4a;
+        color: #f0f0f0;
+        cursor: pointer;
+        border-color: #093e4a;
+    }
+}
+
+@media (max-width: 768px) {
+    .campo {
+        width: 100%;
+    }
+
+    .row div {
+        padding: 10px;
+        font-size: 2rem;
+    }
+
+    nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    button {
+        height: 30px;
+        width: 70%;
+        font-size: 1.0rem;
+    }
+}
